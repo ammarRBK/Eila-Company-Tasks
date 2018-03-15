@@ -44,15 +44,52 @@ app.get('/favicon.ico', function(req, res) {
     res.status(204);
 });
 
+var paitesJSON=[
+    {
+        "name": "Jack sparrow",
+        "age":32,
+    "isCaptured": true
+    },
+    {
+       "name": "Black beard",
+       "age":45,
+    "isCaptured": false
+    },
+    
+    {
+       "name": "William Kidd",
+       "age":56,
+    "isCaptured": true
+    },
+    {
+       "name": "Anne Bonny",
+       "age":28,
+    "isCaptured": false
+    },
+    {
+       "name": "Ching Shih",
+       "age":69,
+    "isCaptured": false
+    }
+    ];
+
 //first route
 app.get('/', (request,response)=>{
+    db.update({},{
+        $push:{
+            piratesArr:paitesJSON[0]
+        }
+    },(err,newdata)=>{
+        if(err) console.log(err)
+        console.log("------------------>",newdata);
+    })
     response.redirect('./index.html');
 });
 
 app.get('/pirates', (req,res) => {
     db.find({},(err,data)=>{
         if(err) console.log("---------------->",err);
-        res.send(data);
+        res.send(data.json());
     })
 });
 
