@@ -1,0 +1,40 @@
+Second Task
+
+You will need to create a RESTful API using Node.js using Express, mongoDB (e.g: mLab) that has 1 route ‘/pirates’ that returns the data that is in the JSON below.
+
+Please note that in order to pass this task, ‘GET /pirates’ should contain only the data that is in the JSON below.
+
+Once you are done, please deploy your app to http://heroku.com, and send a message to Eila saying “Avast ye” and follow the instructions given. 
+
+Make sure you are using Git 😉 
+
+Pirates JSON
+
+[
+{
+    "name": "Jack sparrow",
+    "age":32,
+"isCaptured": true
+},
+{
+   "name": "Black beard",
+   "age":45,
+"isCaptured": false
+},
+
+{
+   "name": "William Kidd",
+   "age":56,
+"isCaptured": true
+},
+{
+   "name": "Anne Bonny",
+   "age":28,
+"isCaptured": false
+},
+{
+   "name": "Ching Shih",
+   "age":69,
+"isCaptured": false
+}
+]
