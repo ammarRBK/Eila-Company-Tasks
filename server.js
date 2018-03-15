@@ -11,6 +11,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+//require the database module
+var db= require('./database');
+
 //--------------------------headers----------------------\\
 app.use(function (req, res, next) {
 
@@ -31,14 +34,26 @@ app.use(function (req, res, next) {
     next();
  });
 
+ //---------------use static files-----------------------\\
+
+ app.use(express.static(__dirname +'/./'))
+
 //------------------------routers-----------------------\\
+
+app.get('/favicon.ico', function(req, res) {
+    res.status(204);
+});
+
 //first route
 app.get('/', (request,response)=>{
-    response.redirect('index.html');
+    response.redirect('./index.html');
 });
 
 app.get('/pirates', (req,res) => {
-    res.send('waite the database');
+    db.find({},(err,data)=>{
+        if(err) console.log("---------------->",err);
+        res.send(data);
+    })
 });
 
 //-----------------------------listening part----------------\\
