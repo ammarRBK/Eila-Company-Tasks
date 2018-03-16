@@ -2,7 +2,7 @@ var mongoose= require('mongoose');
 //define schema variable
 var Schema= mongoose.Schema;
 //connect with the database middleware
-mongoose.connect('mongodb://eila123:eila123@ds115579.mlab.com:15579/pirates',(err,data)=>{
+mongoose.connect('mongodb://eila123:eila123@ds215739.mlab.com:15739/pirates',(err,data)=>{
     if(err){
         console.log(err);
     }

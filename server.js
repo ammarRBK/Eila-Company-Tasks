@@ -75,22 +75,24 @@ var paitesJSON=[
 
 //first route
 app.get('/', (request,response)=>{
-    db.update({},{
-        $push:{
-            piratesArr:paitesJSON[0]
-        }
-    },(err,newdata)=>{
-        if(err) console.log(err)
-        console.log("------------------>",newdata);
-    })
+    // db.update({},{
+    //     $push:{
+    //         piratesArr:paitesJSON[0]
+    //     }
+    // },(err,newdata)=>{
+    //     if(err) console.log(err)
+    //     console.log("------------------>",newdata);
+    // })
     response.redirect('./index.html');
 });
 
 app.get('/pirates', (req,res) => {
-    db.find({},(err,data)=>{
-        if(err) console.log("---------------->",err);
-        res.send(data.json());
-    })
+    db.find({}, (err, data) => {
+        if (err) console.log(err);
+        // console.log('------------> all users', data);
+        data = paitesJSON;
+        res.send(data);
+    });
 });
 
 //-----------------------------listening part----------------\\
