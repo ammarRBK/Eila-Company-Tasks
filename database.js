@@ -1,8 +1,9 @@
 var mongoose= require('mongoose');
+var dbConfig= require('./config/config').mongoDb;
 //define schema variable
 var Schema= mongoose.Schema;
 //connect with the database middleware
-mongoose.connect('mongodb://eila123:eila123@ds215739.mlab.com:15739/pirates',(err,data)=>{
+mongoose.connect(dbConfig, (err,data)=>{
     if(err){
         console.log(err);
     }

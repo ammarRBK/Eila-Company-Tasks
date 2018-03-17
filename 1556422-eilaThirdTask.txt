@@ -1,0 +1,15 @@
+Third Task
+
+You will need to add an authentication layer to your API (look into http://passportjs.org). Once you do that, you should end up with a header called ‘Authorization’ that takes a value of  “someAuthorizationToken”.
+
+someToken would look something like this:  
+
+eyJ0sdAiOksl1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MjMzNTAyOTMsImlhdCI6MTUyMDc3MDI5Mywic3ViIjoiNWFhNTExN2I0ZDhlMjcyY2U0YTZlMGFlIn0.1f-AAAXHTgzfEn-R6MB1W31_F2umR_Gej9UnJ2eGOOA
+
+After adding the authentication layer, add a new endpoint to your api that is called 'pirates/countPirates’. *note that this should be authenticated
+
+When this countPirates is called, it should call this public API  https://eila-pirate-api.herokuapp.com/pirates/prison this API will return a JSON that contains an array of “faces” just like the array that was used in the first task.
+
+Use the same function you wrote in the first task to count the valid pirate faces and return a JSON that looks like {“piratesFound”:X} where ‘X' is the number of pirates found. 
+
+Once you are done, send: “I be a buccaneer” to Eila and follow the instructions.
